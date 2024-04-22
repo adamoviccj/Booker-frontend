@@ -1,0 +1,31 @@
+<div class="background">
+  <div class="container">
+    <table>
+      <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Issuer</th>
+        <th>Serial number</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Add certificate</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let podatak of podaci">
+        <td>{{ podatak.subject }}</td>
+        <td>{{ podatak.issuer }}</td>
+        <td>{{ podatak.serialNumber }}</td>
+        <td>{{ podatak.startDate| date: 'dd.MM.yyyy. HH:mm:ss'  }}</td>
+        <td>{{ podatak.endDate  | date: 'dd.MM.yyyy. HH:mm:ss' }}</td>
+        <td><button mat-mini-fab color="accent" type="button">
+          <mat-icon>add</mat-icon>
+        </button> </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

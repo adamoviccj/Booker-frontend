@@ -1,0 +1,43 @@
+<div class="background">
+  <div class="container">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>SUBJECT UID</th>
+        <th>Subject CN</th>
+        <th>Subject Organization</th>
+        <th>Subject Organizational Unit</th>
+        <th>Subject Country</th>
+        <th>Subject Email</th>
+        <th>Date</th>
+        <th>Request Type</th>
+        <th>Request Status</th>
+        <th>Rejection reason</th>
+        <th>Accept request</th>
+        <th>Reject request</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let podatak of podaci">
+        <td>{{ podatak.id }}</td>
+        <td>{{ podatak.subjectUID }}</td>
+        <td>{{ podatak.subjectCN }}</td>
+        <td>{{ podatak.subjectOrganization }}</td>
+        <td>{{ podatak.subjectOrganizationalUnit }}</td>
+        <td>{{ podatak.subjectCountry }}</td>
+        <td>{{ podatak.subjectEmail }}</td>
+        <td>{{ podatak.date | date: 'dd.MM.yyyy. HH:mm:ss' }}</td>
+
+        <td>{{ podatak.certificateType }}</td>
+        <td>{{ podatak.requestStatus }}</td>
+        <td>{{ podatak.rejectionReason }}</td>
+        <td><button mat-raised-button id="btnAccept" (click)="accept(podatak.id)">Accept</button></td>
+        <td><button mat-raised-button id="btnReject" (click)="openRejectDialog(podatak.id)">Reject</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

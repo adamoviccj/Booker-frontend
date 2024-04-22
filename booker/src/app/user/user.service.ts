@@ -1,16 +1,14 @@
 import {Injectable} from '@angular/core';
 import {UserType} from "../enums/user-type.enum";
 import {User} from "./model/user.model";
-import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
-import {catchError, map, Observable, switchMap, throwError} from "rxjs";
+import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
+import {catchError, map, Observable, switchMap} from "rxjs";
 import {Guest} from "./guest-view/model/guest.model";
 import {environment} from "../../env/env";
-import {UpdateUserDTO} from "./dto/UpdateUserDTO";
 import {Owner} from "./owner-view/model/owner.model";
 import {Admin} from "./admin-view/model/admin.model";
 import {ApiService, ConfigService} from "../service";
 import {Router} from "@angular/router";
-import {UserDTO} from "./dto/UserDTO";
 import {CreateUserDTO} from "./dto/CreateUserDTO";
 
 
@@ -86,6 +84,8 @@ export class UserService {
                         this.loginRole = 'owners';
                     } else if (this.loggedInUser.role === UserType.ADMIN) {
                         this.loginRole = 'admins';
+                    } else if(this.loggedInUser.role === UserType.SUPER) {
+                      this.loginRole = 'supers';
                     }
                 }
 

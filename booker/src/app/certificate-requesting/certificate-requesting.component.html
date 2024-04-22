@@ -1,0 +1,79 @@
+<div class="background">
+
+  <div class="container">
+    <div class="logo-container">
+      <img src="../../../assets/images/big-logo.png" alt="logo" class="logo">
+      <input id="duration" value="2000" type="number" min="0" step="100" style="display: none" #duration>
+    </div>
+    <form>
+      <mat-vertical-stepper [linear]="false" [animationDuration]="duration.value" #stepper>
+        <mat-step  [stepControl]="formGroupPersonalData">
+          <form [formGroup]="formGroupPersonalData">
+            <ng-template matStepLabel>Enter your personal data</ng-template>
+            <mat-form-field>
+              <mat-label>Enter your common name</mat-label>
+              <input formControlName="subjectCN"  matInput type="text" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Enter your surname</mat-label>
+              <input formControlName="subjectSurname" matInput required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Enter your given name</mat-label>
+              <input formControlName="subjectGN" matInput required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Enter your country</mat-label>
+              <input formControlName="subjectCountry" matInput required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Enter your email</mat-label>
+              <input formControlName="subjectEmail" matInput required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="formGroupOrganizationData">
+          <form [formGroup]="formGroupOrganizationData">
+            <ng-template matStepLabel>Organization data</ng-template>
+
+            <mat-form-field>
+              <mat-label>Organization</mat-label>
+              <input matInput required formControlName="subjectOrganization">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Organizational unit</mat-label>
+              <input type="text" matInput required formControlName="subjectOrganizationalUnit">
+            </mat-form-field>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button mat-button matStepperNext type="button">Next</button>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="formGroupRequestType">
+          <form [formGroup]="formGroupRequestType">
+            <ng-template matStepLabel>Request type</ng-template>
+            <mat-form-field>
+              <mat-label>Request type</mat-label>
+              <mat-select formControlName="requestType">
+                <mat-option *ngFor="let requestType of certificateTypesForDisplay" [value]="requestType" >
+                  {{ requestType }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Submit data</ng-template>
+          <div id="buttons">
+            <button type="submit" mat-raised-button (click)="submitForm()">Submit</button>
+            <button type="reset" mat-raised-button>Reset</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+    </form>
+  </div>
+</div>
+
+

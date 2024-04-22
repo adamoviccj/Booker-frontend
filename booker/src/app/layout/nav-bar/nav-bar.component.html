@@ -20,6 +20,9 @@
           <li class="menu-item" *ngIf="loginRole==='owners'"><button type="button" (click)="toggleMenu()" [routerLink]="['create_accommodation']">Create accommodation</button> </li>
           <li class="menu-item" *ngIf="loginRole==='owners'"><button type="button" (click)="toggleMenu()" [routerLink]="['report/date']">Date interval report</button> </li>
           <li class="menu-item" *ngIf="loginRole==='owners'"><button type="button" (click)="toggleMenu()" [routerLink]="['report/accommodation']">Accommodation report</button> </li>
+          <li class="menu-item" *ngIf="loginRole==='supers'"><button type="button" (click)="toggleMenu()" [routerLink]="['certificate_requests/all']">Certificate requests</button> </li>
+          <li class="menu-item" *ngIf="loginRole!='guests'"><button type="button" (click)="toggleMenu()" [routerLink]="['certificate_requests/create']">Create certificate request</button> </li>
+          <li class="menu-item" *ngIf="loginRole==='supers'"><button type="button" (click)="toggleMenu()" [routerLink]="['certificates/all']">Display certificates</button> </li>
           <li class="menu-item"><button type="button" (click)="logout()" >Log out</button></li>
         </ul>
       </div>

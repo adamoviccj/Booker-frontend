@@ -29,8 +29,11 @@ import {GuestReservationsComponent} from "./reservations/guest-reservations/gues
 import { ReportUserComponent } from './user/report-user/report-user.component';
 import {NotificationsModule} from "./notifications/notifications.module";
 import {CommentsAndRatingsModule} from "./comments-and-ratings/comments-and-ratings.module";
-import {RatingCardComponent} from "./comments-and-ratings/rating-card/rating-card.component";
 import {ReportedUsersAdminModule} from "./reported-users-admin/reported-users-admin.module";
+import { RequestsViewComponent } from './requests-view/requests-view.component';
+import { RejectRequestComponent } from './reject-request/reject-request.component';
+import { CertificateRequestingComponent } from './certificate-requesting/certificate-requesting.component';
+import { DisplayCertificatesComponent } from './display-certificates/display-certificates.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,11 @@ import {ReportedUsersAdminModule} from "./reported-users-admin/reported-users-ad
     PhotoUploadComponent,
     ActivationViewComponent,
     UpdateAvailabilityComponent,
-    ReportUserComponent
+    ReportUserComponent,
+    RequestsViewComponent,
+    RejectRequestComponent,
+    CertificateRequestingComponent,
+    DisplayCertificatesComponent
   ],
   imports: [
     BrowserModule,

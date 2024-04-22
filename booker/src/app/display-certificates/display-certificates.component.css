@@ -1,0 +1,40 @@
+.background {
+  background-image: url("../../../src/assets/images/pozadina.png");
+  height: 100vh;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content both horizontally and vertically */
+}
+
+.container {
+  border-radius: 20px;
+  padding: 15px;
+  height: fit-content;
+  background-color: rgba(144, 162, 136, 0.6);
+}
+
+table tr {
+  padding: 15px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(144, 162, 136, 0.8);
+}
+

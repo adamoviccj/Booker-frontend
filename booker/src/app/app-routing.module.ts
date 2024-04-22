@@ -36,6 +36,10 @@ import {
 } from "./comments-and-ratings/accommodation-comments-and-ratings/accommodation-comments-and-ratings.component";
 import {ReportedUsersComponent} from "./reported-users-admin/reported-users/reported-users.component";
 import {GuestTableComponent} from "./user/guest-table/guest-table.component";
+import {RequestsViewComponent} from "./requests-view/requests-view.component";
+import {RejectRequestComponent} from "./reject-request/reject-request.component";
+import {CertificateRequestingComponent} from "./certificate-requesting/certificate-requesting.component";
+import {DisplayCertificatesComponent} from "./display-certificates/display-certificates.component";
 
 
 const routes: Routes = [
@@ -67,7 +71,12 @@ const routes: Routes = [
   {path: 'notifications', component: NotificationsComponent},
   {path: 'comments_and_ratings/owner', component: OwnerCommentsAndRatingsComponent},
   {path: 'comments_and_ratings/accommodation', component: AccommodationCommentsAndRatingsComponent},
-  {path: 'reported', component: ReportedUsersComponent}
+  {path: 'reported', component: ReportedUsersComponent},
+  {path: 'certificate_requests/all', component: RequestsViewComponent},
+  {path: 'certificate_requests/reject', component: RejectRequestComponent},
+  {path: 'certificate_requests/create', component: CertificateRequestingComponent},
+  {path: 'certificates/all', component: DisplayCertificatesComponent}
+
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {UserService} from "../../user/user.service";
 import {User} from "../../user/model/user.model";
 import {UserType} from "../../enums/user-type.enum";
@@ -35,6 +35,8 @@ export class NavBarComponent{
             this.loginRole = 'owners';
           } else if (this.loggedInUser.role === UserType.ADMIN) {
             this.loginRole = 'admins';
+          } else if (this.loggedInUser.role === UserType.SUPER) {
+            this.loginRole = 'supers';
           }
         }
       },
